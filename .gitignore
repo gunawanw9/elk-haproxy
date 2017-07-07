@@ -1,4 +1,5 @@
 *.crt
 *.bak
 *.tmp
+.vagrant
 master.sh
