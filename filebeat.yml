@@ -1,0 +1,30 @@
+filebeat:
+  prospectors:
+    -
+      paths:
+        - /var/log/secure
+        - /var/log/messages
+      input_type: log
+      document_type: syslog
+    
+    -
+      paths:
+        - /var/log/haproxy*
+      input_type: log
+      document_type: haproxy
+
+  registry_file: /var/lib/filebeat/registry
+
+output:
+  logstash:
+    hosts: ["172.16.24.3:5044"]
+    bulk_max_size: 1024
+
+    tls:
+      certificate_authorities: ["/etc/pki/tls/certs/logstash-forwarder.crt"]
+
+shipper:
+
+logging:
+  files:
+    rotateeverybytes: 10485760 # = 10MB

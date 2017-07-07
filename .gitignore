@@ -1,0 +1,4 @@
+*.crt
+*.bak
+*.tmp
+master.sh

@@ -1,0 +1,6 @@
+#!/bin/bash
+
+exec 1> >(logger -s -t $(basename $0)) 2>&1
+
+sar -q 1 1 | tail -n +4 | awk '{ print "load average for 15 mins: " $7 }' | head -n -1
+

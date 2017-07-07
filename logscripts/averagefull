@@ -1,0 +1,9 @@
+#!/bin/bash
+
+exec 1> >(logger -s -t $(basename $0)) 2>&1
+
+sar -q 1 1 | head -n 1 | awk '{ print $2 $3 "-" $4 }'
+
+sar -q 1 1 | tail -n +4 | awk '{ printf "for the last 15 mins:\n"; \
+print "run queue average length: " $3 ", average number of tasks: " $4 ". load average is: " $7; }' | head -n -2
+
