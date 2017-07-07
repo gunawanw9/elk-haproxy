@@ -1,5 +1,5 @@
 # elk-haproxy
-<h1> made by [progressivesasha](https://github.com/progressivesasha/) . If you have any questions, feel free to contact me: a.nekrasov.opsdev@gmail.com </h1>
+<h1> made by [progressivesasha](https://github.com/progressivesasha) . If you have any questions, feel free to contact me: a.nekrasov.opsdev@gmail.com </h1>
 <p> elk server, haproxy-based load balancer and a backend machine <p>
 
 # Run 
